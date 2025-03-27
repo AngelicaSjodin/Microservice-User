@@ -1,9 +1,9 @@
 package com.example.user;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -19,6 +19,11 @@ public class UserController {
     @PostMapping
     public void createNewUser (@RequestBody User user){
         userService.createUser(user);
+    }
+
+    @GetMapping
+    public ResponseEntity <List<User>> getAllUsers(){
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
 
