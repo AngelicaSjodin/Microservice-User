@@ -15,7 +15,25 @@ public class User {
 
     private String email;
 
+    private Long paymentId;
+
     public User(){
+    }
+
+
+    public User(Long id, String name, String email,Long paymentId) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.paymentId=paymentId;
+    }
+
+    public Long getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
     }
 
     public Long getId() {
